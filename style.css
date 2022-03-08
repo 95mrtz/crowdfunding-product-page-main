@@ -17,8 +17,12 @@
   box-sizing: border-box;
 }
 
-body {
+.body {
   background-color: hsl(0, 0%, 98%);
+}
+
+.body-modal {
+  background-color: hsl(0, 0%, 0%, 0.7);
 }
 
 /* header , logo y navbar menu */
@@ -145,19 +149,46 @@ header {
   cursor: pointer;
 }
 
-.btn-bookmark {
+.btn-back-project:hover,
+.btn-reward:hover,
+.btn-continue:hover {
+  background-color: var(--dark-cyan);
+}
+
+.img-bookmark {
   background-image: url("./images/icon-bookmark.svg");
-  background-position: left;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 15px 20px 15px 50px;
+  width: 42px;
+  height: 42px;
+  margin-right: 9px;
+}
+
+.img-active {
+  background-image: url("./images/icon-bookmarked.svg");
+}
+
+.btn-bookmark {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 21px;
   border-radius: 50px;
   border: none;
-  font-size: 13px;
   font-weight: 700;
   text-align: right;
   color: var(--dark-gray);
 }
+
+.btn-bookmark:hover {
+  cursor: pointer;
+}
+
+.active {
+  color: var(--dark-cyan);
+}
+
 
 /* Section 2 */
 
@@ -243,6 +274,11 @@ progress[value]::-moz-progress-bar {
   background-size: contain;
   width: 15px;
   height: 15px;
+}
+
+.img-close:hover {
+  background-image: url("./images/icon-close-modal-active.svg");
+  cursor: pointer;
 }
 
 .about p {
@@ -346,6 +382,22 @@ progress[value]::-moz-progress-bar {
 
 /* Modal */
 
+.modal {
+  display: none;
+}
+
+.modal-active {
+  position:absolute;
+  top:32%;
+  right:23%;
+  bottom:0;
+  left:23%;  
+  opacity: 1;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+}
+
 .donation-modal {
   margin: 20px 0px;
   border: 1px solid rgba(190, 190, 190, 0.5);
@@ -389,6 +441,11 @@ progress[value]::-moz-progress-bar {
   margin-right: 5px;
 }
 
+.title-donation-modal h2:hover {
+  color:var(--moderate-cyan);
+  cursor: pointer;
+}
+
 .title-donation-modal h5 {
   font-size: 15px;
   font-weight: 700;
@@ -410,6 +467,12 @@ progress[value]::-moz-progress-bar {
 
 .donation-details-modal {
   margin: 20px 0px;
+}
+
+/* Selected Plegde */ 
+
+.div-pledge {
+  display: none;
 }
 
 .pledge-donation {
@@ -467,6 +530,10 @@ input[type=number] { -moz-appearance:textfield; }
 
  /* success-modal */
 
+ .modal-success-confimation {
+   display: none;
+ }
+ 
  .success-modal {
    padding: 20px;
   margin: 20px 0px;
