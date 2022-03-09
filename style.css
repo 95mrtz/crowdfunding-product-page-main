@@ -19,10 +19,12 @@
 
 .body {
   background-color: hsl(0, 0%, 98%);
+  height: 100vh;
+  max-height: 100%;
 }
 
 .body-modal {
-  background-color: hsl(0, 0%, 0%, 0.7);
+  background-color: hsl(0, 0%, 0%, 0.8);
 }
 
 /* header , logo y navbar menu */
@@ -147,6 +149,11 @@ header {
   font-weight: 700;
   text-align: center;
   cursor: pointer;
+}
+
+.btn-reward a {
+  text-decoration: none;
+  color: white;
 }
 
 .btn-back-project:hover,
@@ -387,12 +394,14 @@ progress[value]::-moz-progress-bar {
 }
 
 .modal-active {
+  display: block;
   position:absolute;
   top:32%;
   right:23%;
   bottom:0;
   left:23%;  
   opacity: 1;
+  transform: translateY(-15%);
 	-webkit-transition: opacity 400ms ease-in;
 	-moz-transition: opacity 400ms ease-in;
 	transition: opacity 400ms ease-in;
@@ -475,9 +484,15 @@ progress[value]::-moz-progress-bar {
   display: none;
 }
 
+.pledge-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .pledge-donation {
   padding: 20px;
-  margin: 20px 0px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -515,6 +530,25 @@ margin: 0;
 
 input[type=number] { -moz-appearance:textfield; }
 
+.alert-pledge {
+  display: none;
+}
+
+.alert-pledge-active {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.text-alert {
+  
+  font-weight: 700;
+  font-size: medium;
+  color: firebrick;
+}
+
 /* modal out stock */
 
 .donation-modal-out-stock {
@@ -533,6 +567,19 @@ input[type=number] { -moz-appearance:textfield; }
  .modal-success-confimation {
    display: none;
  }
+
+ .modal-success-confimation-active {
+  display: block;
+  position:absolute;
+  top:50%;
+  right:32%;
+  bottom:50%;
+  left:32%;  
+  opacity: 1;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+}
  
  .success-modal {
    padding: 20px;
