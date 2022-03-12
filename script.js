@@ -9,10 +9,15 @@ const header = document.getElementById("header");
 const main = document.getElementById("main");
 const closeModal = document.getElementById("img-close");
 const titleNoReward = document.getElementById("title-noReward");
+const titleNoRewardMobile = document.getElementById("title-noReward-mobile");
 const titleBamboo = document.getElementById("title-bamboo");
+const titleBambooMobile = document.getElementById("title-bamboo-mobile");
 const titleBlackEdition = document.getElementById("title-blackEdition");
+const titleBlackEditionMobile = document.getElementById("title-blackEdition-mobile");
 const inputRadio25 = document.getElementById("input-radio25");
 const inputRadio75 = document.getElementById("input-radio75");
+const inputRadio25Mobile = document.getElementById("input-radio25-mobile");
+const inputRadio75Mobile = document.getElementById("input-radio75-mobile");
 const pledge25 = document.getElementById("pledge25");
 const pledge75 = document.getElementById("pledge75");
 const input25 = document.getElementById("input-pledge25");
@@ -175,4 +180,29 @@ hamburgerMenu.addEventListener("click", () => {
     navbarFloating.classList.remove("navbar-floating-active");
     navbarFloating.classList.add("navbar-floating");
   }
+});
+
+titleNoRewardMobile.addEventListener("click", () => {
+  modal.classList.remove("modal-active");
+  modal.classList.add("modal");
+  modalSuccessConfimation.classList.remove("modal-success-confimation");
+  modalSuccessConfimation.classList.add("modal-success-confimation-active");
+});
+
+titleBambooMobile.addEventListener("click", () => {
+  pledge25.classList.remove("div-pledge");
+  pledge75.classList.add("div-pledge");
+  inputRadio25Mobile.checked = true;
+  inputRadio75Mobile.checked = false;
+  titleBamboo.style.color = "hsl(176, 50%, 47%)";
+  titleBlackEdition.style.color = "hsl(0, 0%, 48%)";
+});
+
+titleBlackEditionMobile.addEventListener("click", () => {
+  pledge75.classList.remove("div-pledge");
+  pledge25.classList.add("div-pledge");
+  inputRadio75Mobile.checked = true;
+  inputRadio25Mobile.checked = false;
+  titleBlackEdition.style.color = "hsl(176, 50%, 47%)";
+  titleBamboo.style.color = "hsl(0, 0%, 48%)";
 });
